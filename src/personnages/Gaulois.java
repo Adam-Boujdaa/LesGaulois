@@ -9,8 +9,20 @@ public class Gaulois {
 		this.force=force;
 	}
 	
-	public getNom() {
+	public String getNom() {
 		return nom;
+	}
+	
+	public void parler(String phrase) {
+		System.out.println("Le Gaulois "+nom+" dis : \""+phrase+"\".");
+	}
+	
+	
+	public static void main(String[] args) {
+		Gaulois asterix= new Gaulois("Astérix", 8);
+		String name = asterix.getNom();
+		
+		System.out.println(name);		
 	}
 	
 }
