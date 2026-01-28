@@ -2,7 +2,7 @@ package personnages;
 
 public abstract class Personnage {
 	private String nom;
-	private int force;
+	protected int force; //plus private comme ça le gauloi speut changer la valeur qd il se fait booster
 		
 	public Personnage(String nom, int force) {
 		this.nom=nom;
@@ -36,10 +36,20 @@ public abstract class Personnage {
 		else {
 			System.out.println("Aie !");
 		}
-				
+	}
+	
+	public void reduireForce(double n) {
+		force-=n;
 	}
 	
 	protected abstract String donnerAuteur();
+	
+	public Boolean estATerre() {
+		if (force<0) {
+			return true;
+		}
+		else {return false;}
+	}
 		
 }
 
