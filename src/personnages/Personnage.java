@@ -18,7 +18,7 @@ public abstract class Personnage {
 	}
 		
 	public void parler(String phrase) {
-		System.out.println("Le Romain "+nom+" dis : \""+phrase+"\".");
+		System.out.println(this.donnerAuteur()+" dis : \""+phrase+"\".");
 	}
 	
 	public void frapper(Personnage adversaire) {
@@ -38,17 +38,10 @@ public abstract class Personnage {
 		}
 	}
 	
-	public void reduireForce(double n) {
-		force-=n;
-	}
-	
 	protected abstract String donnerAuteur();
 	
-	public Boolean estATerre() {
-		if (force<0) {
-			return true;
-		}
-		else {return false;}
+	public boolean estATerre() {
+		return force<=0;
 	}
 		
 }

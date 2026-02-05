@@ -1,6 +1,8 @@
 package personnages;
 
 public class Gaulois extends Personnage {
+	private double puissancePotion=1;
+	
 	
 	public Gaulois(String nom, int force) {
 		super(nom, force);
@@ -11,16 +13,22 @@ public class Gaulois extends Personnage {
 		return("Le gaulois "+this.getNom()+" ");
 	}
 	
-	public int boirePotion(Druide d) {
-		if (this.getNom().equals("Obélix")) {
-			this.parler("Non Oblélix!");
-			return force;
-		}
-		else {
-			int forcePotion = d.getForcePotion();
-			int forceBoostee = this.force*forcePotion;
-			this.parler("Merci Druide ! Ma force est maintenant de " + forceBoostee);	
-			return forceBoostee;
-		}
+	@Override
+	public void frapper(Personnage adversaire) {
+		int forceCoup = (int) (force * puissancePotion) ;
+		        
+		        System.out.println(this.donnerAuteur() + " donne un grand coup de force " + forceCoup + " au " + adversaire.getNom() + ".");
+		        
+		        adversaire.recevoirCoup(forceCoup);
+		
+		        // Décroissance de la potion
+		        if (puissancePotion > 1.0) {
+		        	puissancePotion -= 0.5;
+		        }
 	}
+	
+	public void boirePotion(int p) {
+			puissancePotion=p;
+		}
+	
 }
