@@ -26,11 +26,11 @@ public abstract class Personnage {
 	}
 	
 	public void recevoirCoup(int force) {
-		this.force=this.force-force/3;
+		this.force=this.force-force	;
 		if (this.force<=0) {
 			if (this.force<0) {
 				this.force=0;
-				System.out.println("J'abandonne...");
+				this.parler("J'abandonne...");
 				}
 			}
 		else {

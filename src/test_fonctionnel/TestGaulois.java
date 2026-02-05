@@ -1,6 +1,7 @@
 package test_fonctionnel;
 
 import personnages.Druide;
+import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
 
@@ -12,7 +13,9 @@ public class TestGaulois {
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 5);
 		Gaulois agecanonix = new Gaulois("Agecanonix", 1);
-		Romain minus = new Romain("Minus", 6);
+		Romain minus = new Romain("Minus", 18);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
 
 		panoramix.fabriquerPotion(3);
 
